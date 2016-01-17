@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
 <!--
-           . uW8"                                                                  < .z@8"`      
-           `t888                     ..    .     :       x.    .        u.    u.    !@88E        
-     .u     8888   .        .u     .888: x888  x888.   .@88k  z88u    x@88k u@88c.  '888E   u    
-  ud8888.   9888.z88N    ud8888.  ~`8888~'888X`?888f` ~"8888 ^8888   ^"8888""8888"   888E u@8NL  
-:888'8888.  9888  888E :888'8888.   X888  888X '888>    8888  888R     8888  888R    888E`"88*"  
-d888 '88%"  9888  888E d888 '88%"   X888  888X '888>    8888  888R     8888  888R    888E .dN.   
-8888.+"     9888  888E 8888.+"      X888  888X '888>    8888  888R     8888  888R    888E~8888   
-8888L       9888  888E 8888L        X888  888X '888>    8888 ,888B .   8888  888R    888E '888&  
-'8888c. .+ .8888  888" '8888c. .+  "*88%""*88" '888!`  "8888Y 8888"   "*88*" 8888"   888E  9888. 
- "88888%    `%888*%"    "88888%      `~    "    `"`     `Y"   'YP       ""   'Y"   '"888*" 4888" 
-   "YP'        "`         "YP'                                                        ""    ""   
+           . uW8"                                                                  < .z@8"`
+           `t888                     ..    .     :       x.    .        u.    u.    !@88E
+     .u     8888   .        .u     .888: x888  x888.   .@88k  z88u    x@88k u@88c.  '888E   u
+  ud8888.   9888.z88N    ud8888.  ~`8888~'888X`?888f` ~"8888 ^8888   ^"8888""8888"   888E u@8NL
+:888'8888.  9888  888E :888'8888.   X888  888X '888>    8888  888R     8888  888R    888E`"88*"
+d888 '88%"  9888  888E d888 '88%"   X888  888X '888>    8888  888R     8888  888R    888E .dN.
+8888.+"     9888  888E 8888.+"      X888  888X '888>    8888  888R     8888  888R    888E~8888
+8888L       9888  888E 8888L        X888  888X '888>    8888 ,888B .   8888  888R    888E '888&
+'8888c. .+ .8888  888" '8888c. .+  "*88%""*88" '888!`  "8888Y 8888"   "*88*" 8888"   888E  9888.
+ "88888%    `%888*%"    "88888%      `~    "    `"`     `Y"   'YP       ""   'Y"   '"888*" 4888"
+   "YP'        "`         "YP'                                                        ""    ""
 -->
 	<head>
 		<base href="/">
@@ -23,29 +23,10 @@ d888 '88%"  9888  888E d888 '88%"   X888  888X '888>    8888  888R     8888  888
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-
-		<style>
-			body {
-				font-family: 'Lato';
-				font-weight: 300;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			a, a:visited {
-				color: red;
-				font-weight: bold;
-				transition: all 0.2s ease-in-out;
-			}
-
-			a:hover, a:visited:hover, a:active {
-				color: lightpink;
-			}
-		</style>
+		<link href='style.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div>
+		<div class="hi">
 			<h1>hi :)</h1>
 
 			<h2>i mostly do web stuff... mostly</h2>
@@ -55,15 +36,40 @@ d888 '88%"  9888  888E d888 '88%"   X888  888X '888>    8888  888R     8888  888
 			</p>
 
 			<ul>
-				<li><a href="http://github.com/ebemunk/phoenix">phoenix</a> - image forensics cli
+				<li>
+					<a href="http://github.com/ebemunk/phoenix">phoenix</a> - digital image forensics command tool
 				</li>
-				<li><a href="http://phoenixeye.ebemunk.com">phoenixeye</a> - web gui for phoenix
+				<li>
+					<a href="http://phoenixeye.ebemunk.com">phoenixeye</a> - image forensics web app
 				</li>
-				<li><a href="http://ebemunk.github.io/chesscomutils/">chesscomutils</a> - opening classifier and misc utilities for Chess.com Live Chess
+				<li>
+					<a href="http://github.com/ebemunk/chess-dataviz">chess-dataviz</a> - chess visualizations with D3.js
 				</li>
-				<li><a href="http://opex.ebemunk.com">opex</a> - chess openings explorer: the modern way
+				<li>
+					<a href="http://ebemunk.github.io/chesscomutils/">chesscomutils</a> - opening classifier and misc utilities for Chess.com Live Chess
+				</li>
+				<li>
+					<a href="http://opex.ebemunk.com">opex</a> - chess openings explorer: the modern way
+				</li>
+			</ul>
+
+			<ul class="foot-nav">
+				<li>
+					<a href="http://blog.ebemunk.com">Blog</a>
+				</li>
+				<li>
+					<a href="http://github.com/ebemunk">GitHub</a>
 				</li>
 			</ul>
 		</div>
+
+		<svg id="bg"></svg>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js"></script>
+		<script src="bg.js"></script>
+		<script>
+			d3.selectAll('a').attr('data-hover', function() {return this.textContent});
+		</script>
 	</body>
 </html>
