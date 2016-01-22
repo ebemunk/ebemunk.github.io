@@ -26,7 +26,7 @@ a::before {
 	overflow: hidden;
 	max-width: 0;
 	border-bottom: 2px solid white;
-	color: white;
+	color: transparent;
 	content: attr(data-hover);
 	transition: max-width 0.5s;
 	font-weight: bold;
